@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Đặt bàn</title>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">LOGO</a>
+        <div class="nav-links">
+            <a href="index.html">Trang chủ</a>
+            <a href="choice.html" class="active">Đặt bàn</a>
+            <a href="menu.html">Thực đơn</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Thông tin đặt bàn</h2>
+        <form action="success.html">
+            <div class="form-group"><label>Họ và tên</label><input type="text" required></div>
+            <div class="form-group"><label>Email</label><input type="email" required></div>
+            <div class="form-group"><label>Số điện thoại</label><input type="tel" required></div>
+            <div class="form-group"><label>Số lượng khách</label><input type="number" min="1" required></div>
+            <div class="form-group"><label>Ngày đặt</label><input type="date" required></div>
+            <div class="form-group"><label>Thời gian đến ăn</label><input type="time" required></div>
+            <div class="form-group"><label>Yêu cầu đặc biệt</label><textarea rows="3"></textarea></div>
+            
+            <button type="submit" class="btn">ĐẶT BÀN</button>
+        </form>
+
+        <div class="restaurant-info">
+            <strong>Thông tin liên hệ nhà hàng:</strong><br>
+            Địa chỉ: [Điền địa chỉ của bạn]<br>
+            Email: [Điền email của bạn]<br>
+            Thời gian hoạt động: [Điền thời gian]<br>
+        </div>
+    </div>
+</body>
+</html>
