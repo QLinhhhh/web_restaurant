@@ -5,6 +5,16 @@
     padding: 0; 
 }
 
+body { 
+    background-color: #f4f4f9; 
+    /* Padding top 100px tránh navbar, padding bottom 100px tránh thanh checkout ở các trang có nó */
+    padding: 100px 20px 100px 20px; 
+    min-height: 100vh;
+}
+
+/* =========================================
+   NAVIGATION BAR
+   ========================================= */
 .navbar {
     width: 100%;
     background-color: #222;
@@ -50,16 +60,9 @@
     border-bottom: 2px solid #d9534f;
 }
 
-body { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    min-height: 100vh; 
-    background-color: #f4f4f9; 
-    padding: 100px 20px 20px 20px;
-}
-
+/* =========================================
+   GENERAL COMPONENTS
+   ========================================= */
 .container { 
     background: white; 
     padding: 40px; 
@@ -68,6 +71,7 @@ body {
     max-width: 600px; 
     width: 100%; 
     text-align: center; 
+    margin: 0 auto; /* Căn giữa container khi body không còn là flex */
 }
 
 h1, h2 { 
@@ -95,37 +99,55 @@ h1, h2 {
     background: #c9302c; 
 }
 
-.split-screen { 
-    display: flex; 
-    height: calc(100vh - 100px);
-    width: 100vw; 
-    margin: -20px; 
+/* =========================================
+   CHOICE PAGE (LỰA CHỌN ĐẶT BÀN)
+   ========================================= */
+.choices-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); 
+    gap: 40px; 
 }
 
-.half { 
-    flex: 1; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    text-decoration: none; 
-    color: white; 
-    font-size: 24px; 
-    font-weight: bold; 
-    transition: 0.3s; 
+.choice-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 320px;
+    height: 220px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-.half:hover { 
-    opacity: 0.9; 
+.choice-card.bg-dark {
+    background-color: #2c3e50;
 }
 
-.bg-dark { 
-    background: #333; 
+.choice-card.bg-red {
+    background-color: #e74c3c;
 }
 
-.bg-red { 
-    background: #d9534f; 
+.choice-card:hover {
+    transform: translateY(-8px);
+    filter: brightness(1.2);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
 }
 
+.choices-container:hover .choice-card:not(:hover) {
+    filter: brightness(0.6);
+    opacity: 0.8;
+}
+
+/* =========================================
+   FORMS & RESTAURANT INFO
+   ========================================= */
 .form-group { 
     text-align: left; 
     margin-bottom: 15px; 
@@ -153,6 +175,9 @@ h1, h2 {
     color: #666; 
 }
 
+/* =========================================
+   MENU & CARDS
+   ========================================= */
 .menu-item { 
     display: flex; 
     align-items: center; 
@@ -165,20 +190,6 @@ h1, h2 {
 
 .menu-info { 
     text-align: left; 
-}
-
-.quantity-control { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-}
-
-.qty-btn { 
-    padding: 5px 15px; 
-    font-size: 20px; 
-    cursor: pointer; 
-    border: 1px solid #ccc; 
-    background: #fff; 
 }
 
 #section {
@@ -239,6 +250,9 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
+/* =========================================
+   QUANTITY CONTROLS
+   ========================================= */
 .quantity-control {
     display: flex;
     align-items: center;
@@ -264,6 +278,9 @@ h1, h2 {
     background: #d9534f;
 }
 
+/* =========================================
+   CATEGORIES
+   ========================================= */
 .category-block {
     margin-bottom: 50px; 
     width: 100%;
@@ -292,6 +309,9 @@ h1, h2 {
     font-weight: bold;
 }
 
+/* =========================================
+   STICKY CHECKOUT BAR
+   ========================================= */
 .sticky-checkout-bar {
     position: fixed;
     bottom: 0;
@@ -322,8 +342,4 @@ h1, h2 {
     margin: 0;
     width: auto;
     padding: 12px 40px;
-}
-
-body {
-    padding-bottom: 100px; 
 }
